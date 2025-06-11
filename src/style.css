@@ -3,15 +3,6 @@
   background-color: #ffffff;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0px;
   padding: 0px;
@@ -22,9 +13,28 @@ body {
   min-height: 100vh;
 }
 
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.card {
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.card .cardBottom {
+  padding-top: 20px;
+}
+
 h1 {
   font-size: 2.4em;
-  line-height: 1.1;
+  margin-top: 0px;
 }
 
 ul {
@@ -36,11 +46,43 @@ li {
   list-style: none;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+li.issue-list-item {
+  margin-bottom: 15px;
+  list-style: none;
+  cursor: pointer;
+  text-align: left;
+}
+li.issue-list-item:last-child {
+  margin-bottom: 0px;
+}
+li.issue-list-item .issue-title {
+  font-weight: bold;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+li.issue-list-item .issue-status {
+  font-size: 13px;
+  display: inline-block;
+  padding: 0px 4px;
+  border: 1px solid #888888;
+  color: #888888;
+  border-radius: 2px;
+  min-width: 80px;
   text-align: center;
+  margin-right: 10px;
+}
+p {
+  padding: 0px;
+  margin: 0px;
+}
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
 }
 
 .btn {

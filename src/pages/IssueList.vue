@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="card">
     <h1>이슈 리스트</h1>
     <ul>
       <IssueListItem v-for="issue in props.issueList" :key="issue.id" :issue="issue" />
     </ul>
-    <div>
+    <div class="cardBottom">
       <BaseButton @click="goToNewIssue" buttonName="신규 이슈 등록" variant="primary" />
     </div>
   </div>
