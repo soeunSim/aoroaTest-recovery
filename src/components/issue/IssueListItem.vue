@@ -1,15 +1,19 @@
 <template>
   <li class="issue-list-item">
-    <span class="issue-status">상태</span>
-    <p class="issue-title">제목이 들어갈 자리 입니다.</p>
+    <span class="issue-status">{{ props.issue.status }}</span>
+    <p class="issue-title">{{ props.issue.title }}</p>
     <div>
-      <span class="issue-manager">담당자</span> |
-      <span class="issue-date">생성일</span>
+      <span class="issue-manager">{{ issue.user ? issue.user.name : '미지정' }}</span> |
+      <span class="issue-date">{{ props.issue.createdAt }}</span>
     </div>
   </li>
 </template>
 
-<script setup></script>
+<script setup>
+const props = defineProps({
+  issue: Object,
+})
+</script>
 
 <style scoped>
 li.issue-list-item {
