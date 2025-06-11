@@ -1,10 +1,22 @@
 <template>
   <label for="statusFilter">상태 필터:</label>
-  <select id="statusFilter">
-    <option value="">전체</option>
-    <option value="PENDING">PENDING</option>
-    <option value="IN_PROGRESS">IN_PROGRESS</option>
-    <option value="COMPLETED">COMPLETED</option>
-    <option value="CANCELLED">CANCELLED</option>
+  <select id="statusFilter" v-model="selected">
+    <option v-for="option in props.STATUS_OPTIONS" :key="option.value" :value="option.value">
+      {{ option.label }}
+    </option>
   </select>
 </template>
+
+<script setup>
+import { ref, watch } from 'vue'
+const props = defineProps({
+  modelValue: String,
+  STATUS_OPTIONS: Array,
+})
+
+const emit = defineEmits(['update:modelValue'])
+
+const selected = ref(props.modelValue)
+
+watch(selected, (val) => emit('update:modelValue', val))
+</script>
