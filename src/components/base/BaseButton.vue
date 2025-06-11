@@ -1,5 +1,5 @@
 <template>
-  <button :class="['btn', variant]">
+  <button :class="['btn', variant]" @click="handleClick">
     {{ props.buttonName }}
   </button>
 </template>
@@ -12,4 +12,10 @@ const props = defineProps({
     default: 'primary',
   },
 })
+
+const emit = defineEmits(['click'])
+
+function handleClick(event) {
+  emit('click', event)
+}
 </script>
