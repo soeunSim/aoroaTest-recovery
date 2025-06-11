@@ -3,8 +3,8 @@
     <router-view
       :issueList="issueList"
       :selectUsers="selectUsers"
-      @saveData="hendleSaveData"
-      @goBack="goToBack"
+      @saveData="handleSaveData"
+      @goBack="handleGoToBack"
     />
   </div>
 </template>
@@ -17,7 +17,7 @@ import { useRouter } from 'vue-router'
 const issueList = ref([...issues])
 const selectUsers = reactive([...users])
 
-function hendleSaveData(saveData) {
+function handleSaveData(saveData) {
   if (!saveData.title || !saveData.description) {
     alert('입력칸을 채워주세요.')
     return
@@ -30,11 +30,11 @@ function hendleSaveData(saveData) {
   saveData.user = selectUsers.find((user) => user.id === Number(saveData.userId)) || null
 
   issueList.value.push({ ...saveData })
-  goToBack()
+  handleGoToBack()
 }
 
 const router = useRouter()
-function goToBack() {
+function handleGoToBack() {
   router.push('/')
 }
 </script>

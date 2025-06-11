@@ -8,7 +8,7 @@
       <IssueListItem v-for="issue in filteredIssues" :key="issue.id" :issue="issue" />
     </ul>
     <div class="card-bottom">
-      <BaseButton @click="goToNewIssue" buttonName="신규 이슈 등록" variant="primary" />
+      <BaseButton @click="handleGoToNewIssue" buttonName="신규 이슈 등록" variant="primary" />
     </div>
   </div>
 </template>
@@ -36,7 +36,7 @@ const filteredIssues = computed(() => {
 })
 
 const router = useRouter()
-function goToNewIssue() {
+function handleGoToNewIssue() {
   router.push('issues/new')
 }
 </script>
