@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="card">
     <IssueFormInner
       :formData="formData"
       :selectUsers="props.selectUsers"

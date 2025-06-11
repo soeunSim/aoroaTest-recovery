@@ -4,7 +4,7 @@
     <ul>
       <IssueListItem v-for="issue in props.issueList" :key="issue.id" :issue="issue" />
     </ul>
-    <div class="cardBottom">
+    <div class="card-bottom">
       <BaseButton @click="goToNewIssue" buttonName="신규 이슈 등록" variant="primary" />
     </div>
   </div>
