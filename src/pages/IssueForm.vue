@@ -2,7 +2,7 @@
   <div>
     <IssueFormInner
       :formData="formData"
-      :selectUsers="selectUsers"
+      :selectUsers="props.selectUsers"
       @saveData="(data) => emit('saveData', data)"
       @goBack="goToBack"
     ></IssueFormInner>
@@ -12,6 +12,10 @@
 <script setup>
 import IssueFormInner from '../components/issue/IssueFormInner.vue'
 import { reactive } from 'vue'
+
+const props = defineProps({
+  selectUsers: Array,
+})
 
 const emit = defineEmits(['saveData'])
 

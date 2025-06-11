@@ -12,7 +12,7 @@
       <div>
         <label for="formUser">담당자</label>
         <select id="formUser" v-model="localForm.userId">
-          <option disabled value="null">담당자 선택</option>
+          <option disabled value="">담당자 선택</option>
           <option v-for="user in props.selectUsers" :key="user.id" :value="user.id">
             {{ user.name }}
           </option>
