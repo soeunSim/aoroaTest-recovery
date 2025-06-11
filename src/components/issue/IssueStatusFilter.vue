@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
+import { computed, watch } from 'vue'
 const props = defineProps({
   modelValue: String,
   STATUS_OPTIONS: Array,
@@ -16,7 +16,10 @@ const props = defineProps({
 
 const emit = defineEmits(['update:modelValue'])
 
-const selected = ref(props.modelValue)
+const selected = computed({
+  get: () => props.modelValue,
+  set: (val) => emit('update:modelValue', val),
+})
 
 watch(selected, (val) => emit('update:modelValue', val))
 </script>
