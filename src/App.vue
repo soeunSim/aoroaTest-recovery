@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <router-view :issueList="issueList" :selectUsers="selectUsers" @saveData="hendleSaveData" />
+    <router-view
+      :issueList="issueList"
+      :selectUsers="selectUsers"
+      @saveData="hendleSaveData"
+      @goBack="goToBack"
+    />
   </div>
 </template>
 

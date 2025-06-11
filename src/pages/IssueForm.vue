@@ -4,7 +4,7 @@
       :formData="formData"
       :selectUsers="props.selectUsers"
       @saveData="(data) => emit('saveData', data)"
-      @goBack="goToBack"
+      @goBack="$emit('goBack')"
     ></IssueFormInner>
   </div>
 </template>
@@ -17,7 +17,7 @@ const props = defineProps({
   selectUsers: Array,
 })
 
-const emit = defineEmits(['saveData'])
+const emit = defineEmits(['saveData', 'goBack'])
 
 const formData = reactive({
   title: '',
