@@ -22,14 +22,33 @@ function handleSaveData(saveData) {
     alert('입력칸을 채워주세요.')
     return
   }
+
   if (!saveData.userId) {
     saveData.status = 'PENDING'
   }
-  saveData.createdAt = new Date().toISOString()
-  saveData.updatedAt = new Date().toISOString()
-  saveData.user = selectUsers.find((user) => user.id === Number(saveData.userId)) || null
 
-  issueList.value.push({ ...saveData })
+  const existingIndex = issueList.value.findIndex((issue) => issue.id === saveData.id)
+
+  const matchedUser = selectUsers.find((user) => user.id === Number(saveData.userId)) || null
+  saveData.user = matchedUser
+
+  const now = new Date().toISOString()
+
+  if (existingIndex !== -1) {
+    issueList.value[existingIndex] = {
+      ...issueList.value[existingIndex],
+      ...saveData,
+      updatedAt: now,
+    }
+  } else {
+    issueList.value.push({
+      ...saveData,
+      id: Date.now(),
+      createdAt: now,
+      updatedAt: now,
+    })
+  }
+
   handleGoToBack()
 }
 
