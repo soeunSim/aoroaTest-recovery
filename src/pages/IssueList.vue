@@ -21,6 +21,6 @@ const issues = reactive(issueMockListData)
 
 const router = useRouter()
 function goToNewIssue() {
-  router.push('issue/new')
+  router.push('issues/new')
 }
 </script>
