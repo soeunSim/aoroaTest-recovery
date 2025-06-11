@@ -1,11 +1,12 @@
 <template>
   <div>
-    <p>이슈 목록 페이지입니다.</p>
+    <h1>이슈 리스트</h1>
+    <ul>
+      <IssueListItem />
+    </ul>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'IssueList',
-}
+<script setup>
+import IssueListItem from '../components/issue/IssueListItem.vue'
 </script>
