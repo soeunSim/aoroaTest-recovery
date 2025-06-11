@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <form @submit.prevent>
     <div>
       <div>
         <label for="">제목</label>
@@ -23,7 +23,7 @@
       </div>
       <div>
         <BaseButton buttonName="저장"></BaseButton>
-        <BaseButton buttonName="목록 보기" variant="ghost"></BaseButton>
+        <BaseButton buttonName="목록 보기" variant="ghost" @click="emit('goBack')"></BaseButton>
       </div>
     </div>
   </form>
@@ -31,6 +31,8 @@
 
 <script setup>
 import BaseButton from '../base/BaseButton.vue'
+
+const emit = defineEmits(['goBack'])
 </script>
 
 <style scoped></style>
