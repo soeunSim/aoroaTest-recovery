@@ -6,7 +6,7 @@
 
 <script setup>
 import { ref, reactive } from 'vue'
-import { users, issues } from '../data/mockData'
+import { users, issues } from './data/mockData'
 import { useRouter } from 'vue-router'
 
 const issueList = ref([...issues])
