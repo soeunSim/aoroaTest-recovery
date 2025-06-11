@@ -1,5 +1,5 @@
 <template>
-  <li class="issue-list-item">
+  <li class="issue-list-item" @click="goToDetail(issue.id)">
     <span class="issue-status">{{ props.issue.status }}</span>
     <p class="issue-title">{{ props.issue.title }}</p>
     <div>
@@ -10,7 +10,14 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router'
+
 const props = defineProps({
   issue: Object,
 })
+
+const router = useRouter()
+function goToDetail(id) {
+  router.push(`/issues/${id}`)
+}
 </script>
