@@ -1,8 +1,8 @@
 <template>
   <div>
     <h1>이슈 리스트</h1>
-    <ul v-for="issue in issues" :key="issue.id">
-      <IssueListItem :issue="issue" />
+    <ul>
+      <IssueListItem v-for="issue in issues" :key="issue.id" :issue="issue" />
     </ul>
   </div>
 </template>
