@@ -1,7 +1,9 @@
 <template>
   <div class="card">
     <h1>이슈 리스트</h1>
-    <IssueStatusFilter :STATUS_OPTIONS="STATUS_OPTIONS" v-model="selected" />
+    <div class="card-info">
+      <IssueStatusFilter :STATUS_OPTIONS="STATUS_OPTIONS" v-model="selected" />
+    </div>
     <ul>
       <IssueListItem v-for="issue in filteredIssues" :key="issue.id" :issue="issue" />
     </ul>
